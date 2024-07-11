@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CSC295HW2": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Executable"
+    }
+  }
+}

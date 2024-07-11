@@ -2,13 +2,13 @@
 
 namespace CSC295HW2
 {
-    public class Program
+    public class SingleElementFinder
     {
         // Function to find the single element in the sorted array
-        public static int FindSingleElement(int[] nums)
+        public static int FindSingle(int[] arr)
         {
             int low = 0;                    // Initialize low pointer
-            int high = nums.Length - 1;     // Initialize high pointer
+            int high = arr.Length - 1;      // Initialize high pointer
 
             // Perform binary search
             while (low < high)
@@ -20,7 +20,7 @@ namespace CSC295HW2
                     mid--;
 
                 // Check if nums[mid] and nums[mid + 1] are equal
-                if (nums[mid] != nums[mid + 1])
+                if (mid + 1 < arr.Length && arr[mid] != arr[mid + 1])
                 {
                     // Unique element is on the left side
                     high = mid;
@@ -33,14 +33,23 @@ namespace CSC295HW2
             }
 
             // After the loop, low == high and points to the single element
-            return nums[low];
+            return arr[low];
         }
 
         public static void Main(string[] args)
         {
-            int[] nums = { 1, 1, 2, 2, 5, 5, 6, 6, 7, 8, 8, 9, 9 };
-            int soloNum = FindSingleElement(nums);
-            Console.WriteLine("Single element is: " + soloNum); // Output: 7
+            // Test cases
+            int[] arr1 = { 1 };                                                         // Output: 1
+            int[] arr2 = { 1, 1, 2 };                                                   // Output: 2
+            int[] arr3 = { 1, 1, 2, 2, 5, 5, 6, 6, 7, 8, 8, 9, 9 };                     // Output: 7
+            int[] arr4 = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 7, 7, 8, 8, 9, 9 };         // Output: 6
+            int[] arr5 = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10 };  // Output: 10
+
+            Console.WriteLine("Single element in arr1: " + FindSingle(arr1)); // Output: 1
+            Console.WriteLine("Single element in arr2: " + FindSingle(arr2)); // Output: 2
+            Console.WriteLine("Single element in arr3: " + FindSingle(arr3)); // Output: 7
+            Console.WriteLine("Single element in arr4: " + FindSingle(arr4)); // Output: 6
+            Console.WriteLine("Single element in arr5: " + FindSingle(arr5)); // Output: 10
         }
     }
 }

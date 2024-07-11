@@ -20,15 +20,15 @@ namespace CSC295HW2
                     mid--;
 
                 // Check if nums[mid] and nums[mid + 1] are equal
-                if (mid + 1 < arr.Length && arr[mid] != arr[mid + 1])
+                if (arr[mid] == arr[mid + 1])
                 {
-                    // Unique element is on the left side
-                    high = mid;
+                    // Pair is intact, unique element is on the right side
+                    low = mid + 2;
                 }
                 else
                 {
-                    // Unique element is on the right side
-                    low = mid + 2;
+                    // Pair is disrupted, unique element is on the left side
+                    high = mid;
                 }
             }
 

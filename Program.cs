@@ -43,13 +43,14 @@ namespace CSC295HW2
             int[] arr2 = { 1, 1, 2 };                                                   // Output: 2
             int[] arr3 = { 1, 1, 2, 2, 5, 5, 6, 6, 7, 8, 8, 9, 9 };                     // Output: 7
             int[] arr4 = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 7, 7, 8, 8, 9, 9 };         // Output: 6
-            int[] arr5 = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10 };  // Output: 10
+            // Output: 17
+            int[] arr5 = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 15, 15, 16, 16, 17, 20, 20, 33, 33, 35, 44, 44, 53, 53, 77, 77, 85, 85, 100, 100 };
 
             Console.WriteLine("Single element in arr1: " + FindSingle(arr1)); // Output: 1
             Console.WriteLine("Single element in arr2: " + FindSingle(arr2)); // Output: 2
             Console.WriteLine("Single element in arr3: " + FindSingle(arr3)); // Output: 7
             Console.WriteLine("Single element in arr4: " + FindSingle(arr4)); // Output: 6
-            Console.WriteLine("Single element in arr5: " + FindSingle(arr5)); // Output: 10
+            Console.WriteLine("Single element in arr5: " + FindSingle(arr5)); // Output: 17
         }
     }
 }
